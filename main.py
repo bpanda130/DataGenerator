@@ -15,6 +15,8 @@ from json2xml.utils import readfromjson
 from utility import jsonGenerator, datagenerator
 import concurrent.futures
 import threading
+from dicttoxml import dicttoxml
+from dict2xml import dict2xml
 
 
 def open_file():
@@ -29,21 +31,22 @@ def open_file():
 def buildXML(noOfRecords, file_name, payload_file):
     start = time.perf_counter()
     buildJSON(noOfRecords, file_name, payload_file)
-    xmldata = readfromjson(file_name + ".json")
-    xmldata = json2xml.Json2xml(xmldata, wrapper="Data", pretty=True, attr_type=False).to_xml()
+    jsondata = readfromjson(file_name + ".json")
+    xmldata = json2xml.Json2xml(jsondata, wrapper="Data", pretty=True, attr_type=False).to_xml()
     myfile = open(file_name + ".xml", "w")
     myfile.write(str(xmldata))
     myfile.close
-    if platform.system() == 'Windows':
+    if platform.system() != 'Linux':
         Label(main_window, text='XML Data Generated Successfully!', foreground='green').place(x=200, y=200)
         main_window.update()
-        time.sleep(3)
-        main_window.destroy()
+        #time.sleep(3)
+        #main_window.destroy()
     finish = time.perf_counter()
-    print(f'Finished in {round(finish - start, 2)} second(s)')
+    print(f'XML Finished in {round(finish - start, 2)} second(s)')
 
 
 def append_to_file(noOfRecords, file_name, payload_file):
+    start = time.perf_counter()
     record = int(noOfRecords)
     header = False
     with open(file_name+".csv", 'w', newline='') as file:
@@ -54,46 +57,46 @@ def append_to_file(noOfRecords, file_name, payload_file):
                 csv_file.writerow([x.title() for x in columns])
                 header = True
             csv_file.writerow(row)
-    if platform.system() == 'Windows':
+    if platform.system() != 'Linux':
         Label(main_window, text='CSV Data Generated Successfully!', foreground='green').place(x=200, y=200)
         main_window.update()
-        time.sleep(3)
-        main_window.destroy()
+        #time.sleep(3)
+        #main_window.destroy()
+    finish = time.perf_counter()
+    print(f'CSV File Finished in {round(finish - start, 2)} second(s)')
 
 
 def buildJSON(noOfRecords, file_name, payload_file):
+    start = time.perf_counter()
     record = int(noOfRecords)
     with open(payload_file, 'rb') as j:
         json_data = json.load(j)
     arr = []
-    reqdict = {}
-
     with concurrent.futures.ProcessPoolExecutor() as executor:
-        #reqdict = {'Id': i + 1}
         results = [executor.submit(jsonGenerator, json_data, {'Id': i + 1}) for i in range(record)]
         for f in concurrent.futures.as_completed(results):
             arr.append(f.result())
 
-    # for i in range(record):
-    #     reqdict = {'Id':i+1}
-    #     arr.append(jsonGenerator(json_data, reqdict))
     fh = open(file_name+".json", "w+")
     fh.write(json.dumps(arr))
     fh.close
-    if platform.system() == 'Windows':
+    if platform.system() != 'Linux':
         Label(main_window, text='JSON Data Generated Successfully!', foreground='green').place(x=200, y=200)
         main_window.update()
-        time.sleep(3)
+        #time.sleep(3)
         #ws.destroy()
+    finish = time.perf_counter()
+    print(f'JSON File Finished in {round(finish - start, 2)} second(s)')
 
 #if platform.system() == 'Windows':
 if __name__ == '__main__':
     os.environ["OPENBLAS_MAIN_FREE"] = "1"
     style = Style()
-    style = Style(theme='darkly', themes_file='C:/example/Custom_Theme.json')
+    style = Style(theme='darkly')
     file_name = "BulkTestData"
     main_window = style.master
-    helv36 = tkFont.Font(family='Helvetica', size=10)
+    #main_window = Tk()
+    helv36 = tkFont.Font(family='Helvetica', size=13)
 
     main_window.title('Bulk_Data_Generator_PSTD_1.0')
     main_window.geometry('500x300')
@@ -115,13 +118,19 @@ if __name__ == '__main__':
     record_text=Entry(main_window, width=10)
     record_text.place(x=110, y=100)
 
-    CSVGeneBtn = Button(main_window, text='Generate CSV', style='primary.TButton', command=lambda: append_to_file(noOfRecords=int(record_text.get()), file_name=file_name, payload_file=pl_text.get()))
+    #CSVGeneBtn = Button(main_window, text='Generate CSV', style='primary.TButton', command=lambda: append_to_file(noOfRecords=int(record_text.get()), file_name=file_name, payload_file=pl_text.get()))
+    CSVGeneBtn = Button(main_window, text='Generate CSV', style='primary.TButton',command=lambda: threading.Thread(target=append_to_file, args=[record_text.get(), file_name, pl_text.get()]).start())
     CSVGeneBtn.place(x=80, y=150)
 
-    jsonGeneBtn = Button(main_window, text='Generate JSON', style='primary.TButton', command=lambda: buildJSON(noOfRecords=int(record_text.get()), file_name=file_name, payload_file=pl_text.get()))
+    #jsonGeneBtn = Button(main_window, text='Generate JSON', style='primary.TButton', command=lambda: buildJSON(noOfRecords=int(record_text.get()), file_name=file_name, payload_file=pl_text.get()))
+    jsonGeneBtn = Button(main_window, text='Generate JSON', style='primary.TButton',command=lambda: threading.Thread(target=buildJSON,args=[record_text.get(), file_name, pl_text.get()]).start())
     jsonGeneBtn.place(x=200, y=150)
 
-    xmlGeneBtn = Button(main_window, text='Generate XML', style='primary.TButton', command=lambda: buildXML(noOfRecords=int(record_text.get()), file_name=file_name, payload_file=pl_text.get()))
+    #xmlGeneBtn = Button(main_window, text='Generate XML', style='primary.TButton', command=lambda: buildXML(noOfRecords=int(record_text.get()), file_name=file_name, payload_file=pl_text.get()))
+    xmlGeneBtn = Button(main_window, text='Generate XML', style='primary.TButton',command=lambda: threading.Thread(target=buildXML,args=[record_text.get(), file_name, pl_text.get()]).start())
     xmlGeneBtn.place(x=330, y=150)
+
+    exit_button = Button(main_window, text="Close", style='primary.TButton', command=main_window.destroy)
+    exit_button.place(x=400, y=250)
 
     main_window.mainloop()
