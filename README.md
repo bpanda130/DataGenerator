@@ -376,7 +376,7 @@ Output:
 For execution on Windows use the available executable file from [Windows](https://github.com/bpanda130/DataGenerator/tree/master/Helper/Windows)
 On providing required Sample Input [file](https://github.com/bpanda130/DataGenerator/tree/master/Helper/SampleInputFile) and number of records, this will generate required Output format file. 
 
-![Test Image]()
+![Test Image](https://github.com/bpanda130/DataGenerator/blob/master/resources/InputWindow.JPG)
 
 ## Linux
 From Continuous Integration perspective I have included installation.sh in the execution flow. For some reason if any user wish to run installation manually then comment the relevant line of code.
