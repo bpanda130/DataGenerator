@@ -1,5 +1,5 @@
 # Introduction
-PSTD BulkData Generator is a open-source  standalone tool to generate mock Test data in form of csv, json and xml format which can be used for any Mock Service, Performance Testing etc. It required input parameter as json schema file where required structure is defined with data type, number of records and required format.
+PSTD BulkData Generator is a open-source  standalone tool to generate mock Test data in form of csv,  and xml format which can be used for any Mock Service, Performance Testing etc. It required input parameter as  schema file where required structure is defined with data type, number of records and required format.
 
 It's a cross-platform stand-alone executable tool can be used in Windows, Linux and Mac operating system.
 
@@ -43,7 +43,7 @@ It's a cross-platform stand-alone executable tool can be used in Windows, Linux 
   <th>Output File Format</th>
   <td>
       <a href="## csv">csv</a> 
-    | <a href="##json">json</a>
+    | <a href="##"></a>
     | <a href="##xml">xml</a>
   </td>
 </tr>
@@ -51,11 +51,11 @@ It's a cross-platform stand-alone executable tool can be used in Windows, Linux 
 
 # Features
 
-* Generate random records in required format like json, xml and csv.
+* Generate random records in required format like , xml and csv.
 * Cross-platform application on Windows, Linux and macOS.
 * Use as a stand-alone executable application in Windows and macOS without any installation.
 * Configure required DataType for record values.
-* Generate randomised Nested JSON payload
+* Generate randomised Nested  payload
 
 ## Input Datatype
 
@@ -64,11 +64,11 @@ It's a cross-platform stand-alone executable tool can be used in Windows, Linux 
 To generate random alphabetic String
 
 Syntax: 
-```json
+```
 "<Node Name>" : "alphabet|<length>"
 ```
 e.g.
-```json
+```
 "ProductName" : "alphabet|30"
 ```
 
@@ -76,11 +76,11 @@ e.g.
 To generate random alphanumeric String
 
 Syntax: 
-```json
+```
 "<Node Name>" : "alphanum|<length>"
 ```
 e.g.
-```json
+```
 "ProductNumber" : "alphanum|30"
 ```
 
@@ -88,11 +88,11 @@ e.g.
 To generate random numeric value
 
 Syntax: 
-```json
+```
 "<Node Name>" : "numeric|<length>"
 ```
 e.g.
-```json
+```
 "ProductID" : "numeric|30"
 ```
 
@@ -100,7 +100,7 @@ e.g.
 If you want to generate a code with some Prefix String
 
 Syntax: 
-```json
+```
 "<Node Name>" : "code||<Prefix String><regex>"
 ```
 * Number signs (‘#’) are replaced with a random digit (0 to 9)
@@ -110,7 +110,7 @@ Syntax:
 * At symbols (‘@’) are replaced with a random non-zero digit or an empty string
 
 e.g.
-```json
+```
 "EmployeeID" : "code||PALO-%%-##LTD!@"
 
 Output: 
@@ -120,11 +120,11 @@ Output:
 To generate random salutations like Dr. or Mr. or Mrs. or Mx.
 
 Syntax: 
-```json
+```
 "<Node Name>" : "alphabet||title"
 ```
 e.g.
-```json
+```
 "Salutation" : "alphabet||title"
 
 Output: 
@@ -135,11 +135,11 @@ Output:
 Use to generate random firstName
 
 Syntax: 
-```json
+```
 "<Node Name>" : "alphabet|<Max length>|firstName"
 ```
 e.g.
-```json
+```
 "Firstname" : "alphabet|20|firstName",
 
 Output: 
@@ -150,11 +150,11 @@ Output:
 Use to generate random lastname
 
 Syntax: 
-```json
+```
 "<Node Name>" : "alphabet|<Max length>|lastName"
 ```
 e.g.
-```json
+```
 "LastName" : "alphabet|20|lastName"
 
 Output: 
@@ -165,11 +165,11 @@ Output:
 Use to generate random date_of_birth
 
 Syntax: 
-```json
+```
 "<Node Name>" : "date_of_birth|MinAge=<age>,MaxAge=<age>|<DateFormat>"
 ```
 e.g.
-```json
+```
 "DOB" : "date_of_birth|MinAge=30,MaxAge=40|%m-%d-%Y"
 
 Output: 
@@ -180,11 +180,11 @@ Output:
 If we want to select a value randomly from given choices
 
 Syntax: 
-```json
+```
 "<Node Name>" : "choices|(<'value1', 'value2'>)|"
 ```
 e.g.
-```json
+```
 "AddressType": "choices|('RES', 'OFF', 'WRK')|"
 
 Output: 
@@ -195,11 +195,11 @@ Output:
 Random Phone Number based on country
 
 Syntax: 
-```json
+```
 "<Node Name>" : "PhoneNumber||<Country Name>"
 ```
 e.g.
-```json
+```
 "Mobile" : "PhoneNumber||India"
 
 Output: 
@@ -209,11 +209,11 @@ Output:
 Random Email Address
 
 Syntax: 
-```json
+```
 "<Node Name>" : "alphanum||email"
 ```
 e.g.
-```json
+```
 "emailId" : "alphanum||email"
 
 Output: 
@@ -224,11 +224,11 @@ Output:
 Random Street Address Name
 
 Syntax: 
-```json
+```
 "<Node Name>" : "alphabet|<length>|streetName"
 ```
 e.g.
-```json
+```
 "Street-1": "alphabet|20|streetName"
 
 Output: 
@@ -239,11 +239,11 @@ Output:
 Random postcode
 
 Syntax: 
-```json
+```
 "<Node Name>" : "numeric|<length>|postcode"
 ```
 e.g.
-```json
+```
 "Postalcode": "numeric|6|postcode"
 
 Output: 
@@ -253,11 +253,11 @@ Output:
 Random country
 
 Syntax: 
-```json
+```
 "<Node Name>" : "alphabet||country"
 ```
 e.g.
-```json
+```
 "country": "alphabet||country"
 
 Output: 
@@ -267,11 +267,11 @@ Output:
 Random city
 
 Syntax: 
-```json
+```
 "<Node Name>" : "alphabet||city"
 ```
 e.g.
-```json
+```
 "City": "alphabet||city"
 
 Output: 
@@ -282,11 +282,11 @@ Output:
 Random city
 
 Syntax: 
-```json
+```
 "<Node Name>" : "alphabet||city"
 ```
 e.g.
-```json
+```
 "City": "alphabet||city"
 
 Output: 
@@ -296,11 +296,11 @@ Output:
 Generate Random Date between two date
 
 Syntax: 
-```json
+```
 "<Node Name>" : "date|StartDate=<date in yyyyMMdd>,EndDate=<date in yyyyMMdd>|<required Date Format>"
 ```
 e.g.
-```json
+```
 "DOJ": "date|StartDate=20100223,EndDate=20200330|%Y-%m-%d"
 
 Output: 
@@ -311,11 +311,11 @@ Output:
 Generate Random Company Name
 
 Syntax: 
-```json
+```
 "<Node Name>" : "alphabet||company"
 ```
 e.g.
-```json
+```
 "Client": "alphabet||company"
 
 Output: 
@@ -326,11 +326,11 @@ Output:
 Randomly choose boolean value
 
 Syntax: 
-```json
+```
 "<Node Name>" : "boolean||"
 ```
 e.g.
-```json
+```
 "Active": "boolean||"
 
 Output: 
@@ -341,14 +341,14 @@ Output:
 Generate random Basic or Internal account number 
 
 Syntax: 
-```json
+```
 "<Node Name>" : "alphanum|<Account Type>|accountNumber" 
 ```
 * NONE - Generate a Basic Bank Account Number (BBAN)
 * Internal - Generate an International Bank Account Number (IBAN)
 
 e.g.
-```json
+```
 "AccountNum": "alphanum|NONE|accountNumber"
 
 Output: 
@@ -358,14 +358,14 @@ Output:
 If you want to use Constant value for all the records
 
 Syntax: 
-```json
+```
 "<Node Name>" : "constant|<Required Value>|"
 ```
 * NONE - Generate a Basic Bank Account Number (BBAN)
 * Internal - Generate an International Bank Account Number (IBAN)
 
 e.g.
-```json
+```
 "Salary": "constant|Monthly|"
 
 Output: 
