@@ -9,14 +9,12 @@ from functools import partial
 from tkinter import *
 from tkinter.ttk import *
 from tkinter import filedialog
-from ttkbootstrap import Style
+#from ttkbootstrap import Style
 from json2xml import json2xml
 from json2xml.utils import readfromjson
 from utility import jsonGenerator, datagenerator
 import concurrent.futures
 import threading
-from dicttoxml import dicttoxml
-from dict2xml import dict2xml
 
 
 def open_file():
@@ -88,15 +86,15 @@ def buildJSON(noOfRecords, file_name, payload_file):
     finish = time.perf_counter()
     print(f'JSON File Finished in {round(finish - start, 2)} second(s)')
 
-#if platform.system() == 'Windows':
+#if platform.system() != 'Linux':
 if __name__ == '__main__':
     os.environ["OPENBLAS_MAIN_FREE"] = "1"
-    style = Style()
-    style = Style(theme='darkly')
+    #style = Style()
+    #style = Style(theme='darkly')
     file_name = "BulkTestData"
-    main_window = style.master
-    #main_window = Tk()
-    helv36 = tkFont.Font(family='Helvetica', size=13)
+    #main_window = style.master
+    main_window = Tk()
+    helv36 = tkFont.Font(family='Helvetica', size=10)
 
     main_window.title('Bulk_Data_Generator_PSTD_1.0')
     main_window.geometry('500x300')
@@ -118,16 +116,16 @@ if __name__ == '__main__':
     record_text=Entry(main_window, width=10)
     record_text.place(x=110, y=100)
 
-    #CSVGeneBtn = Button(main_window, text='Generate CSV', style='primary.TButton', command=lambda: append_to_file(noOfRecords=int(record_text.get()), file_name=file_name, payload_file=pl_text.get()))
-    CSVGeneBtn = Button(main_window, text='Generate CSV', style='primary.TButton',command=lambda: threading.Thread(target=append_to_file, args=[record_text.get(), file_name, pl_text.get()]).start())
+    CSVGeneBtn = Button(main_window, text='Generate CSV', style='primary.TButton', command=lambda: append_to_file(noOfRecords=int(record_text.get()), file_name=file_name, payload_file=pl_text.get()))
+    #CSVGeneBtn = Button(main_window, text='Generate CSV', style='primary.TButton',command=lambda: threading.Thread(target=append_to_file, args=[record_text.get(), file_name, pl_text.get()]).start())
     CSVGeneBtn.place(x=80, y=150)
 
-    #jsonGeneBtn = Button(main_window, text='Generate JSON', style='primary.TButton', command=lambda: buildJSON(noOfRecords=int(record_text.get()), file_name=file_name, payload_file=pl_text.get()))
-    jsonGeneBtn = Button(main_window, text='Generate JSON', style='primary.TButton',command=lambda: threading.Thread(target=buildJSON,args=[record_text.get(), file_name, pl_text.get()]).start())
+    jsonGeneBtn = Button(main_window, text='Generate JSON', style='primary.TButton', command=lambda: buildJSON(noOfRecords=int(record_text.get()), file_name=file_name, payload_file=pl_text.get()))
+    #jsonGeneBtn = Button(main_window, text='Generate JSON', style='primary.TButton',command=lambda: threading.Thread(target=buildJSON,args=[record_text.get(), file_name, pl_text.get()]).start())
     jsonGeneBtn.place(x=200, y=150)
 
-    #xmlGeneBtn = Button(main_window, text='Generate XML', style='primary.TButton', command=lambda: buildXML(noOfRecords=int(record_text.get()), file_name=file_name, payload_file=pl_text.get()))
-    xmlGeneBtn = Button(main_window, text='Generate XML', style='primary.TButton',command=lambda: threading.Thread(target=buildXML,args=[record_text.get(), file_name, pl_text.get()]).start())
+    xmlGeneBtn = Button(main_window, text='Generate XML', style='primary.TButton', command=lambda: buildXML(noOfRecords=int(record_text.get()), file_name=file_name, payload_file=pl_text.get()))
+    #xmlGeneBtn = Button(main_window, text='Generate XML', style='primary.TButton',command=lambda: threading.Thread(target=buildXML,args=[record_text.get(), file_name, pl_text.get()]).start())
     xmlGeneBtn.place(x=330, y=150)
 
     exit_button = Button(main_window, text="Close", style='primary.TButton', command=main_window.destroy)

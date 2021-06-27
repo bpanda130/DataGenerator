@@ -36,16 +36,21 @@ def datagenerator(data_file, records):
             for x in columns:
                 if x == 'id':
                     val = i+1
-                elif "alphabet" in datadict[x]:
+                else:
                     n = datadict[x].split("|")
-                    val = "".join(choice(ascii_lowercase) for i in range(int(n[1])))
-                elif "numeric" in datadict[x]:
-                    n = datadict[x].split("|")
-                    val = "".join(choice(digits) for i in range(int(n[1])))
-                elif "alphanum" in datadict[x]:
-                    n = datadict[x].split("|")
-                    source = string.digits + string.ascii_letters
-                    val = ''.join((random.choice(source) for i in range(int(n[1]))))
+                    if (len(n) == 2):
+                        n.append(None)
+                    val = getFakerDetails(n[2], n[0], n[1])
+                # elif "alphabet" in datadict[x]:
+                #     n = datadict[x].split("|")
+                #     val = "".join(choice(ascii_lowercase) for i in range(int(n[1])))
+                # elif "numeric" in datadict[x]:
+                #     n = datadict[x].split("|")
+                #     val = "".join(choice(digits) for i in range(int(n[1])))
+                # elif "alphanum" in datadict[x]:
+                #     n = datadict[x].split("|")
+                #     source = string.digits + string.ascii_letters
+                #     val = ''.join((random.choice(source) for i in range(int(n[1]))))
                 row.append(val)
             output.append(row)
 
