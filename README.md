@@ -43,7 +43,7 @@ It's a cross-platform stand-alone executable tool can be used in Windows, Linux 
   <th>Output File Format</th>
   <td>
       <a href="#csv">csv</a> 
-    | <a href="#JSON"></a>
+    | <a href="#json">json</a>
     | <a href="#xml">xml</a>
   </td>
 </tr>
@@ -355,7 +355,7 @@ Output:
 "AccountNum": "JRMR05894987945503"
 ```
 ## constant
-If you want to use Constant value for all the records
+If you want to use Constant values for all the records
 
 Syntax: 
 ```json
@@ -373,6 +373,18 @@ Output:
 ```
 
 ## Window
+For execution on Windows use the available executable file from 
 
 ## Linux
+From Continuous Integration perspective I have included installation.sh in the execution flow. For some reason if any user wish to run installation manually then comment the relevant line of code.
+
+To execute on any linux server,
+```commandline
+python3 dataGene.py "<input Payload file path>" "<No. of Records>" "<Output file format (csv, json or xml)>"
+```
+For Example:
+```commandline
+python3 dataGene.py "/mnt/c/user/test.json" "1000" "xml"
+```
+
 ## IOS

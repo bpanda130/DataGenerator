@@ -1,12 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e1d4f5b9-439b-4a1f-ae49-e8153ccf9299" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+    <list default="true" id="e1d4f5b9-439b-4a1f-ae49-e8153ccf9299" name="Default Changelist" comment="Commiting readMe file">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BulkTestData.json" beforeDir="false" afterPath="$PROJECT_DIR$/BulkTestData.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BulkTestData.xml" beforeDir="false" afterPath="$PROJECT_DIR$/BulkTestData.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -16,10 +13,8 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="HighlightingSettingsPerFile">
-    <setting file="file:///Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/tkinter/__init__.py" root0="FORCE_HIGHLIGHTING" />
-  </component>
   <component name="ProjectId" id="1tLFkQ9AAIudlPWVM4eezdRb5Jy" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -106,6 +101,10 @@
       </map>
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Commiting readMe file" />
+    <option name="LAST_COMMIT_MESSAGE" value="Commiting readMe file" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
