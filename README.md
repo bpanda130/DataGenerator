@@ -10,7 +10,7 @@ It's a cross-platform stand-alone executable tool can be used in Windows, Linux 
   <td>
       <a href="#window">Window</a> 
     | <a href="#linux">Linux</a>
-    | <a href="#ios">IOS</a>
+    | <a href="#MacOS">MacOS</a>
   </td>
 </tr>
 <tr>
@@ -58,6 +58,11 @@ It's a cross-platform stand-alone executable tool can be used in Windows, Linux 
 * Generate randomised Nested  payload
 
 ## Input Datatype
+Required input schema defination have to provided with all required Field name and required datatype in JSON format. Here is Sample input Schema defination file,
+
+![Schema Defination Image]()
+
+
 
 ## alphabets
 
@@ -390,4 +395,5 @@ For Example:
 python3 dataGene.py "/mnt/c/user/test.json" "1000" "xml"
 ```
 
-## IOS
+## MacOS
+Like Windows, for Mac systems we have created executable [application](https://github.com/bpanda130/DataGenerator/tree/master/Helper/Mac) which can be use to generate mock output file.
