@@ -8,9 +8,9 @@ It's a cross-platform stand-alone executable tool can be used in Windows, Linux 
 <tr>
   <th>Installation</th>
   <td>
-      <a href="##window">Window</a> 
-    | <a href="##linux">Linux</a>
-    | <a href="##ios">IOS</a>
+      <a href="#window">Window</a> 
+    | <a href="#linux">Linux</a>
+    | <a href="#ios">IOS</a>
   </td>
 </tr>
 <tr>
