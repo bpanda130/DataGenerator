@@ -60,7 +60,7 @@ It's a cross-platform stand-alone executable tool can be used in Windows, Linux 
 ## Input Datatype
 Required input schema defination have to provided with all required Field name and required datatype in JSON format. Here is Sample input Schema defination file,
 
-![Schema Defination Image]()
+![Schema Defination Image](https://github.com/bpanda130/DataGenerator/blob/master/resources/InputSchemaDefination.JPG)
 
 
 
