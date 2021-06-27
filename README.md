@@ -53,9 +53,316 @@ It's a cross-platform stand-alone executable tool can be used in Windows, Linux 
 ##Input Datatype
 
 ###alphabets
-For this datatype we can generate 
+To generate random alphabetic String
 
+Syntax: 
+```json
+"<Node Name>" : "alphabet|<length>"
+```
+e.g.
+```json
+"ProductName" : "alphabet|30"
+```
 
+###alphabets
+To generate random alphanumeric String
+
+Syntax: 
+```json
+"<Node Name>" : "alphanum|<length>"
+```
+e.g.
+```json
+"ProductNumber" : "alphanum|30"
+```
+
+###numeric
+To generate random numeric value
+
+Syntax: 
+```json
+"<Node Name>" : "numeric|<length>"
+```
+e.g.
+```json
+"ProductID" : "numeric|30"
+```
+
+###code
+If you want to generate a code with some Prefix String
+
+Syntax: 
+```json
+"<Node Name>" : "code||<Prefix String><regex>"
+```
+* Number signs (‘#’) are replaced with a random digit (0 to 9)
+* Number signs (‘#’) are replaced with a random digit (0 to 9)
+* Percent signs (‘%’) are replaced with a random non-zero digit (1 to 9)
+* Exclamation marks (‘!’) are replaced with a random digit or an empty string
+* At symbols (‘@’) are replaced with a random non-zero digit or an empty string
+
+e.g.
+```json
+"EmployeeID" : "code||PALO-%%-##LTD!@"
+
+Output: 
+"EmployeeID": "PALO-26-12LTD8"
+```
+###title
+To generate random salutations like Dr. or Mr. or Mrs. or Mx.
+
+Syntax: 
+```json
+"<Node Name>" : "alphabet||title"
+```
+e.g.
+```json
+"Salutation" : "alphabet||title"
+
+Output: 
+"Salutation": "Mr."
+```
+
+###firstName
+Use to generate random firstName
+
+Syntax: 
+```json
+"<Node Name>" : "alphabet|<Max length>|firstName"
+```
+e.g.
+```json
+"Firstname" : "alphabet|20|firstName",
+
+Output: 
+"Firstname": "Samantha"
+```
+
+###lastName
+Use to generate random lastname
+
+Syntax: 
+```json
+"<Node Name>" : "alphabet|<Max length>|lastName"
+```
+e.g.
+```json
+"LastName" : "alphabet|20|lastName"
+
+Output: 
+"LastName": "Daniel"
+```
+
+###date_of_birth
+Use to generate random date_of_birth
+
+Syntax: 
+```json
+"<Node Name>" : "date_of_birth|MinAge=<age>,MaxAge=<age>|<DateFormat>"
+```
+e.g.
+```json
+"DOB" : "date_of_birth|MinAge=30,MaxAge=40|%m-%d-%Y"
+
+Output: 
+"DOB": "04-14-1981"
+```
+
+###choices
+If we want to select a value randomly from given choices
+
+Syntax: 
+```json
+"<Node Name>" : "choices|(<'value1', 'value2'>)|"
+```
+e.g.
+```json
+"AddressType": "choices|('RES', 'OFF', 'WRK')|"
+
+Output: 
+"AddressType": "RES"
+```
+
+###PhoneNumber
+Random Phone Number based on country
+
+Syntax: 
+```json
+"<Node Name>" : "PhoneNumber||<Country Name>"
+```
+e.g.
+```json
+"Mobile" : "PhoneNumber||India"
+
+Output: 
+"Mobile": "+917880010426"
+```
+###email
+Random Email Address
+
+Syntax: 
+```json
+"<Node Name>" : "alphanum||email"
+```
+e.g.
+```json
+"emailId" : "alphanum||email"
+
+Output: 
+"emailId": "ncooper@hopkins.com"
+```
+
+###streetName
+Random Street Address Name
+
+Syntax: 
+```json
+"<Node Name>" : "alphabet|<length>|streetName"
+```
+e.g.
+```json
+"Street-1": "alphabet|20|streetName"
+
+Output: 
+"Street-1": "Douglas Crossing"
+```
+
+###postcode
+Random postcode
+
+Syntax: 
+```json
+"<Node Name>" : "numeric|<length>|postcode"
+```
+e.g.
+```json
+"Postalcode": "numeric|6|postcode"
+
+Output: 
+"Postalcode": "20494"
+```
+###country
+Random country
+
+Syntax: 
+```json
+"<Node Name>" : "alphabet||country"
+```
+e.g.
+```json
+"country": "alphabet||country"
+
+Output: 
+"country": "Singapore"
+```
+###city
+Random city
+
+Syntax: 
+```json
+"<Node Name>" : "alphabet||city"
+```
+e.g.
+```json
+"City": "alphabet||city"
+
+Output: 
+"city": "Bangalore"
+```
+
+###city
+Random city
+
+Syntax: 
+```json
+"<Node Name>" : "alphabet||city"
+```
+e.g.
+```json
+"City": "alphabet||city"
+
+Output: 
+"city": "Bangalore"
+```
+###date
+Generate Random Date between two date
+
+Syntax: 
+```json
+"<Node Name>" : "date|StartDate=<date in yyyyMMdd>,EndDate=<date in yyyyMMdd>|<required Date Format>"
+```
+e.g.
+```json
+"DOJ": "date|StartDate=20100223,EndDate=20200330|%Y-%m-%d"
+
+Output: 
+"DOJ": "2011-07-04"
+```
+
+###company
+Generate Random Company Name
+
+Syntax: 
+```json
+"<Node Name>" : "alphabet||company"
+```
+e.g.
+```json
+"Client": "alphabet||company"
+
+Output: 
+"Client": "Williams-Harris"
+```
+
+###boolean
+Randomly choose boolean value
+
+Syntax: 
+```json
+"<Node Name>" : "boolean||"
+```
+e.g.
+```json
+"Active": "boolean||"
+
+Output: 
+"Active": "False"
+```
+
+###accountNumber
+Generate random Basic or Internal account number 
+
+Syntax: 
+```json
+"<Node Name>" : "alphanum|<Account Type>|accountNumber" 
+```
+* NONE - Generate a Basic Bank Account Number (BBAN)
+* Internal - Generate an International Bank Account Number (IBAN)
+
+e.g.
+```json
+"AccountNum": "alphanum|NONE|accountNumber"
+
+Output: 
+"AccountNum": "JRMR05894987945503"
+```
+###constant
+If you want to use Constant value for all the records
+
+Syntax: 
+```json
+"<Node Name>" : "constant|<Required Value>|"
+```
+* NONE - Generate a Basic Bank Account Number (BBAN)
+* Internal - Generate an International Bank Account Number (IBAN)
+
+e.g.
+```json
+"Salary": "constant|Monthly|"
+
+Output: 
+"Salary": "Monthly"
+```
 
 ## Window
 ## Linux
