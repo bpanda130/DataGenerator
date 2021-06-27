@@ -14,6 +14,7 @@ from json2xml import json2xml
 from json2xml.utils import readfromjson
 from utility import jsonGenerator, datagenerator
 import concurrent.futures
+import multiprocessing
 import threading
 
 
@@ -88,7 +89,7 @@ def buildJSON(noOfRecords, file_name, payload_file):
 
 #if platform.system() != 'Linux':
 if __name__ == '__main__':
-    os.environ["OPENBLAS_MAIN_FREE"] = "1"
+    multiprocessing.freeze_support()
     #style = Style()
     #style = Style(theme='darkly')
     file_name = "BulkTestData"
