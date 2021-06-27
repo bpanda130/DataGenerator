@@ -58,13 +58,13 @@ It's a cross-platform stand-alone executable tool can be used in Windows, Linux 
 * Generate randomised Nested  payload
 
 ## Input Datatype
-Required input schema defination have to provided with all required Field name and required datatype in JSON format. Here is Sample input Schema defination file,
+Required input schema definition have to provided with all required Field name and required datatype in JSON format. Here is Sample input Schema definition [file](https://github.com/bpanda130/DataGenerator/tree/master/Helper/SampleInputFile),
 
 ![Schema Defination Image](https://github.com/bpanda130/DataGenerator/blob/master/resources/InputSchemaDefination.JPG)
 
 
-
-## alphabets
+Below are the sample data type syntax that can be used in input file.
+### alphabets
 
 To generate random alphabetic String
 
@@ -77,7 +77,7 @@ e.g.
 "ProductName" : "alphabet|30"
 ```
 
-## alphabets
+### alphanum
 To generate random alphanumeric String
 
 Syntax: 
@@ -89,7 +89,7 @@ e.g.
 "ProductNumber" : "alphanum|30"
 ```
 
-## numeric
+### numeric
 To generate random numeric value
 
 Syntax: 
@@ -101,7 +101,7 @@ e.g.
 "ProductID" : "numeric|30"
 ```
 
-## code
+### code
 If you want to generate a code with some Prefix String
 
 Syntax: 
@@ -121,7 +121,7 @@ e.g.
 Output: 
 "EmployeeID": "PALO-26-12LTD8"
 ```
-## title
+### title
 To generate random salutations like Dr. or Mr. or Mrs. or Mx.
 
 Syntax: 
@@ -136,7 +136,7 @@ Output:
 "Salutation": "Mr."
 ```
 
-## firstName
+### firstName
 Use to generate random firstName
 
 Syntax: 
@@ -151,7 +151,7 @@ Output:
 "Firstname": "Samantha"
 ```
 
-## lastName
+### lastName
 Use to generate random lastname
 
 Syntax: 
@@ -166,7 +166,7 @@ Output:
 "LastName": "Daniel"
 ```
 
-## date_of_birth
+### date_of_birth
 Use to generate random date_of_birth
 
 Syntax: 
@@ -181,7 +181,7 @@ Output:
 "DOB": "04-14-1981"
 ```
 
-## choices
+### choices
 If we want to select a value randomly from given choices
 
 Syntax: 
@@ -196,7 +196,7 @@ Output:
 "AddressType": "RES"
 ```
 
-## PhoneNumber
+### PhoneNumber
 Random Phone Number based on country
 
 Syntax: 
@@ -210,7 +210,7 @@ e.g.
 Output: 
 "Mobile": "+917880010426"
 ```
-## email
+### email
 Random Email Address
 
 Syntax: 
@@ -225,7 +225,7 @@ Output:
 "emailId": "ncooper@hopkins.com"
 ```
 
-## streetName
+### streetName
 Random Street Address Name
 
 Syntax: 
@@ -240,7 +240,7 @@ Output:
 "Street-1": "Douglas Crossing"
 ```
 
-## postcode
+### postcode
 Random postcode
 
 Syntax: 
@@ -254,7 +254,7 @@ e.g.
 Output: 
 "Postalcode": "20494"
 ```
-## country
+### country
 Random country
 
 Syntax: 
@@ -268,7 +268,7 @@ e.g.
 Output: 
 "country": "Singapore"
 ```
-## city
+### city
 Random city
 
 Syntax: 
@@ -283,21 +283,7 @@ Output:
 "city": "Bangalore"
 ```
 
-## city
-Random city
-
-Syntax: 
-```json
-"<Node Name>" : "alphabet||city"
-```
-e.g.
-```json
-"City": "alphabet||city"
-
-Output: 
-"city": "Bangalore"
-```
-## date
+### date
 Generate Random Date between two date
 
 Syntax: 
@@ -312,7 +298,7 @@ Output:
 "DOJ": "2011-07-04"
 ```
 
-## company
+### company
 Generate Random Company Name
 
 Syntax: 
@@ -327,7 +313,7 @@ Output:
 "Client": "Williams-Harris"
 ```
 
-## boolean
+### boolean
 Randomly choose boolean value
 
 Syntax: 
@@ -342,7 +328,7 @@ Output:
 "Active": "False"
 ```
 
-## accountNumber
+### accountNumber
 Generate random Basic or Internal account number 
 
 Syntax: 
@@ -359,7 +345,7 @@ e.g.
 Output: 
 "AccountNum": "JRMR05894987945503"
 ```
-## constant
+### constant
 If you want to use Constant values for all the records
 
 Syntax: 
@@ -391,8 +377,20 @@ To execute on any linux server,
 python3 dataGene.py "<input Payload file path>" "<No. of Records>" "<Output file format (csv, json or xml)>"
 ```
 For Example:
+
+### xml
 ```commandline
 python3 dataGene.py "/mnt/c/user/test.json" "1000" "xml"
+```
+
+### json
+```commandline
+python3 dataGene.py "/mnt/c/user/test.json" "1000" "json"
+```
+
+### csv
+```commandline
+python3 dataGene.py "/mnt/c/user/test.json" "1000" "csv"
 ```
 
 ## MacOS
