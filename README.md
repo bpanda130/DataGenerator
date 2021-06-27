@@ -42,7 +42,7 @@ It's a cross-platform stand-alone executable tool can be used in Windows, Linux 
 <tr>
   <th>Output File Format</th>
   <td>
-      <a href="##csv">csv</a> 
+      <a href="## csv">csv</a> 
     | <a href="##json">json</a>
     | <a href="##xml">xml</a>
   </td>
@@ -51,9 +51,9 @@ It's a cross-platform stand-alone executable tool can be used in Windows, Linux 
 
 # Features
 
-##Input Datatype
+## Input Datatype
 
-###alphabets
+### alphabets
 
 To generate random alphabetic String
 
@@ -66,7 +66,7 @@ e.g.
 "ProductName" : "alphabet|30"
 ```
 
-###alphabets
+### alphabets
 To generate random alphanumeric String
 
 Syntax: 
@@ -78,7 +78,7 @@ e.g.
 "ProductNumber" : "alphanum|30"
 ```
 
-###numeric
+### numeric
 To generate random numeric value
 
 Syntax: 
@@ -90,7 +90,7 @@ e.g.
 "ProductID" : "numeric|30"
 ```
 
-###code
+### code
 If you want to generate a code with some Prefix String
 
 Syntax: 
@@ -110,7 +110,7 @@ e.g.
 Output: 
 "EmployeeID": "PALO-26-12LTD8"
 ```
-###title
+### title
 To generate random salutations like Dr. or Mr. or Mrs. or Mx.
 
 Syntax: 
@@ -125,7 +125,7 @@ Output:
 "Salutation": "Mr."
 ```
 
-###firstName
+### firstName
 Use to generate random firstName
 
 Syntax: 
@@ -140,7 +140,7 @@ Output:
 "Firstname": "Samantha"
 ```
 
-###lastName
+### lastName
 Use to generate random lastname
 
 Syntax: 
@@ -155,7 +155,7 @@ Output:
 "LastName": "Daniel"
 ```
 
-###date_of_birth
+### date_of_birth
 Use to generate random date_of_birth
 
 Syntax: 
@@ -170,7 +170,7 @@ Output:
 "DOB": "04-14-1981"
 ```
 
-###choices
+### choices
 If we want to select a value randomly from given choices
 
 Syntax: 
@@ -185,7 +185,7 @@ Output:
 "AddressType": "RES"
 ```
 
-###PhoneNumber
+### PhoneNumber
 Random Phone Number based on country
 
 Syntax: 
@@ -199,7 +199,7 @@ e.g.
 Output: 
 "Mobile": "+917880010426"
 ```
-###email
+### email
 Random Email Address
 
 Syntax: 
@@ -214,7 +214,7 @@ Output:
 "emailId": "ncooper@hopkins.com"
 ```
 
-###streetName
+### streetName
 Random Street Address Name
 
 Syntax: 
@@ -229,7 +229,7 @@ Output:
 "Street-1": "Douglas Crossing"
 ```
 
-###postcode
+### postcode
 Random postcode
 
 Syntax: 
@@ -243,7 +243,7 @@ e.g.
 Output: 
 "Postalcode": "20494"
 ```
-###country
+### country
 Random country
 
 Syntax: 
@@ -257,7 +257,7 @@ e.g.
 Output: 
 "country": "Singapore"
 ```
-###city
+### city
 Random city
 
 Syntax: 
@@ -272,7 +272,7 @@ Output:
 "city": "Bangalore"
 ```
 
-###city
+### city
 Random city
 
 Syntax: 
@@ -286,7 +286,7 @@ e.g.
 Output: 
 "city": "Bangalore"
 ```
-###date
+### date
 Generate Random Date between two date
 
 Syntax: 
@@ -301,7 +301,7 @@ Output:
 "DOJ": "2011-07-04"
 ```
 
-###company
+### company
 Generate Random Company Name
 
 Syntax: 
@@ -316,7 +316,7 @@ Output:
 "Client": "Williams-Harris"
 ```
 
-###boolean
+### boolean
 Randomly choose boolean value
 
 Syntax: 
@@ -331,7 +331,7 @@ Output:
 "Active": "False"
 ```
 
-###accountNumber
+### accountNumber
 Generate random Basic or Internal account number 
 
 Syntax: 
@@ -348,7 +348,7 @@ e.g.
 Output: 
 "AccountNum": "JRMR05894987945503"
 ```
-###constant
+### constant
 If you want to use Constant value for all the records
 
 Syntax: 
