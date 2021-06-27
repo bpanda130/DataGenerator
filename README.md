@@ -50,9 +50,11 @@ It's a cross-platform stand-alone executable tool can be used in Windows, Linux 
 </table>
 
 # Features
+
 ##Input Datatype
 
 ###alphabets
+
 To generate random alphabetic String
 
 Syntax: 
