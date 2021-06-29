@@ -38,8 +38,6 @@ def buildXML(noOfRecords, file_name, payload_file):
     if platform.system() != 'Linux':
         Label(main_window, text='XML Data Generated Successfully!', foreground='green').place(x=200, y=200)
         main_window.update()
-        #time.sleep(3)
-        #main_window.destroy()
     finish = time.perf_counter()
     print(f'XML Finished in {round(finish - start, 2)} second(s)')
 
@@ -97,7 +95,7 @@ if __name__ == '__main__':
     main_window = Tk()
     helv36 = tkFont.Font(family='Helvetica', size=10)
 
-    main_window.title('Bulk_Data_Generator_PSTD_1.0')
+    main_window.title('Bulk Data Generator PSTD')
     main_window.geometry('500x300')
 
     def_textbox = tkinter.StringVar()
