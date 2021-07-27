@@ -364,13 +364,23 @@ Output:
 ```
 
 ## Window
-For execution on Windows use the available executable file from [Windows](https://github.com/bpanda130/DataGenerator/tree/master/Helper/Windows)
-On providing required Sample Input [file](https://github.com/bpanda130/DataGenerator/tree/master/Helper/SampleInputFile) and number of records, this will generate required Output format file. 
+- Run the .exe file availble [here](https://github.com/bpanda130/DataGenerator/tree/master/Helper/Windows). 
 
 ![Test Image](https://github.com/bpanda130/DataGenerator/blob/master/resources/InputWindow.JPG)
 
+- On successful execution the above window should be displayed. (If not try cloning the repo again.)
+- Sample Input JSON templates available [here](https://github.com/bpanda130/DataGenerator/tree/master/Helper/SampleInputFile)
+- Enter Number of records
+- Click desired Output file format button to generate the required bulk data.
+- The output file (BulkTestData) will be generated in working directory.
+
 ## Linux
-From Continuous Integration perspective I have included installation.sh in the execution flow. For some reason if any user wish to run installation manually then comment the relevant line of code.
+
+###Libraries Installation
+- To Install required 3rd party libraries use the available file from [here](https://github.com/paloitsingapore/bulk_data_generation/blob/main/installation.sh)
+
+###Utility Execution
+- To generate required output file in Linux environment user this reference.
 
 To execute on any linux server,
 ```commandline
@@ -392,6 +402,3 @@ python3 dataGene.py "/mnt/c/user/test.json" "1000" "json"
 ```commandline
 python3 dataGene.py "/mnt/c/user/test.json" "1000" "csv"
 ```
-
-## MacOS
-Like Windows, for Mac systems we have created executable [application](https://github.com/bpanda130/DataGenerator/tree/master/Helper/Mac) which can be use to generate mock output file.
