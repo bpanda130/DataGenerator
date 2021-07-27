@@ -5,10 +5,6 @@ import time
 
 from main import buildJSON, append_to_file, buildXML
 
-
-# if os.environ.get('DISPLAY','') == '':
-#     print('no display found. Using :0.0')
-#     os.environ.__setitem__('DISPLAY', ':0.0')
 if __name__ == '__main__':
     input_file = sys.argv[1]
     num_records = sys.argv[2]
